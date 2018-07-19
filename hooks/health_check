@@ -1,5 +1,5 @@
 Try {
-  $response = Invoke-WebRequest -Uri "http://{{cfg.api-host}}:{{cfg.api-port}}/healthz"
+  $response = (Invoke-WebRequest -Uri "http://{{cfg.api-host}}:{{cfg.api-port}}/healthz").statuscode
 }
 Catch {
   $message = $_.message.exception

@@ -1,6 +1,6 @@
-$pkg_name="sensu-agent"
+$pkg_name="sensu-agent-win"
 $pkg_filename="sensu-agent"
-$pkg_origin="core"
+$pkg_origin="gscho"
 $pkg_version="2.0.0-beta.2-4"
 $pkg_maintainer="The Habitat Maintainers <humans@habitat.sh>"
 $pkg_license=("MIT")
@@ -25,7 +25,7 @@ function Invoke-Build {
 function Invoke-Install {
   Write-BuildLine "Installing $pkg_filename binary"
   if(!(Test-Path "$pkg_prefix/bin")){
-      mkdir "$pkg_prefix/bin"
+    mkdir "$pkg_prefix/bin"
   }
   Copy-Item "$HAB_CACHE_SRC_PATH/$pkg_filename" "$pkg_prefix/bin/$pkg_filename.exe"
 }
